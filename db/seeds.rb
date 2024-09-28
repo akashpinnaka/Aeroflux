@@ -69,7 +69,7 @@ points = Point.create!([
     {letter: "22B", name: "Core Buddies"},
 ])
 
-team = Team.first
+team = Team.create!(name: "Aeroflux")
 
 stats = team.point_to_point_stats.create!([
     {
