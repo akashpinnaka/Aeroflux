@@ -75,3 +75,4 @@ end
 group :production do
   gem 'pg', '1.5.8'
 end
+gem "render_build_setup", "~> 0.0.1"
