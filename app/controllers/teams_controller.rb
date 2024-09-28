@@ -3,6 +3,7 @@ class TeamsController < ApplicationController
   before_action :set_team, only: [:show, :edit, :update]
 
   def index
+    @teams = Team.all
   end
 
   def show
@@ -15,7 +16,19 @@ class TeamsController < ApplicationController
     if params[:point_b_id].present?
       @stats = @stats.where(point_b_id: params[:point_b_id])
     end
+  end
 
+  def new
+    @team = Team.new
+  end
+
+  def create
+    @team = Team.new(team_params)
+    if @team.save
+      redirect_to @team, notice: 'Team was successfully created.'
+    else
+      render :new
+    end
   end
 
   def edit
@@ -38,6 +51,6 @@ class TeamsController < ApplicationController
   end
 
   def team_params
-    params.require(:team).permit(point_to_point_stats_attributes: [:date_flown, :point_a_id, :point_b_id, :total_pages, :fastest, :slowest, :average, :median, :busts, :_destroy])
+    params.require(:team).permit(:name, point_to_point_stats_attributes: [:date_flown, :point_a_id, :point_b_id, :total_pages, :fastest, :slowest, :average, :median, :busts, :_destroy])
   end
 end
