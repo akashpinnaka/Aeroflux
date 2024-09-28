@@ -5,9 +5,9 @@
     <%= f.collection_select :point_a_id, Point.all, :id, :letter, prompt: "Select Point A", selected: params[:point_a_id], class: "form-control" %>
     to
     <%= f.collection_select :point_b_id, Point.all, :id, :letter, prompt: "Select Point B", selected: params[:point_b_id], class: "form-control" %>
-  </div>
 
-  <%= f.submit "Filter", class: "btn btn-primary" %>
+    <%= f.submit "Filter", class: "btn btn-primary" %>
+  </div>
 <% end %>
 
 
@@ -31,8 +31,8 @@
     <% @stats.each do |stat| %>
       <tr>
         <td><%= stat.date_flown.strftime("%B %d, %Y") %></td>
-        <td><%= stat.point_a.name if stat.point_a %></td>
-        <td><%= stat.point_b.name if stat.point_b %></td>
+        <td><%= stat.point_a.letter if stat.point_a %></td>
+        <td><%= stat.point_b.letter if stat.point_b %></td>
         <td><%= stat.total_pages %></td>
         <td><%= stat.fastest %></td>
         <td><%= stat.slowest %></td>

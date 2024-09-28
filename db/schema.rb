@@ -11,17 +11,20 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2024_09_18_055801) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "point_to_point_stats", force: :cascade do |t|
     t.datetime "date_flown"
-    t.integer "point_a_id", null: false
-    t.integer "point_b_id", null: false
+    t.bigint "point_a_id", null: false
+    t.bigint "point_b_id", null: false
     t.integer "total_pages"
     t.float "fastest"
     t.float "slowest"
     t.float "average"
     t.float "median"
     t.integer "busts"
-    t.integer "team_id", null: false
+    t.bigint "team_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["point_a_id"], name: "index_point_to_point_stats_on_point_a_id"

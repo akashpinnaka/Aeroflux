@@ -9,8 +9,8 @@ gem "rails", "7.0.4"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
-# Use sqlite3 as the database for Active Record
-gem "sqlite3", "1.7.3"
+# Use pg as the database for Active Record
+gem "pg", "~> 1.1"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "5.6.5"
@@ -71,8 +71,4 @@ group :test do
   gem "webdrivers"
 end
 
-
-group :production do
-  gem 'pg', '1.5.8'
-end
 gem "render_build_setup", "~> 0.0.1"
