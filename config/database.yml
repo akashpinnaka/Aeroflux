@@ -82,5 +82,5 @@ test:
 production:
   <<: *default
   database: aeroflux_stats_production
-  username: aeroflux_stats
-  password: <%= ENV["AEROFLUX_STATS_DATABASE_PASSWORD"] %>
+  username: akashpinnaka
+  password: 
