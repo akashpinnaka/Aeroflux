@@ -1,0 +1,30 @@
+<table>
+    <thead>
+        <tr>
+            <th>Point A</th>
+            <th>Point B</th>
+            <th>Date</th>
+            <th>Pages</th>
+            <th>Fastest</th>
+            <th>Slowest</th>
+            <th>Average</th>
+            <th>Median</th>
+            <th>Busts</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @stats.each do |stat| %>
+            <tr>
+                <td><%= stat.point_a.letter %></td>
+                <td><%= stat.point_b.letter %></td>
+                <td><%= stat.date_flown.strftime("%F") %></td>
+                <td><%= stat.total_pages %></td>
+                <td><%= stat.fastest %></td>
+                <td><%= stat.slowest %></td>
+                <td><%= stat.average %></td>
+                <td><%= stat.median %></td>
+                <td><%= stat.busts %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

@@ -1,0 +1,17 @@
+<%= form_for @stat, url: stats_path do |f| %>
+    <%= f.collection_select :point_a_id, Point.all, :id, :letter, prompt: "--From--"  %>
+    <%= f.collection_select :point_b_id, Point.all, :id, :letter, prompt: "--To--"  %>
+    <br />
+    <%= f.label :date_flown %>
+    <%= f.date_select :date_flown %>
+    <br>
+    <%= f.text_field :total_pages, placeholder: "Total Pages" %>
+    <br />
+    <%= f.text_field :fastest, placeholder: "Fastest" %>
+    <%= f.text_field :slowest, placeholder: "Slowest" %>
+    <%= f.text_field :average, placeholder: "Average" %>
+    <%= f.text_field :median, placeholder: "Median" %>
+    <%= f.text_field :busts, placeholder: "Busts" %>
+    <br />
+    <%= f.submit %>
+<% end %>

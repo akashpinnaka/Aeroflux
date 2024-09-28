@@ -1,0 +1,45 @@
+<h2>Filter Stats</h2>
+
+<%= form_with url: team_path, method: :get, local: true do |f| %>
+  <div>
+    <%= f.collection_select :point_a_id, Point.all, :id, :letter, prompt: "Select Point A", selected: params[:point_a_id], class: "form-control" %>
+    to
+    <%= f.collection_select :point_b_id, Point.all, :id, :letter, prompt: "Select Point B", selected: params[:point_b_id], class: "form-control" %>
+  </div>
+
+  <%= f.submit "Filter", class: "btn btn-primary" %>
+<% end %>
+
+
+<h2>Stats for <%= @team.name %></h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Date Flown</th>
+      <th>Point A</th>
+      <th>Point B</th>
+      <th>Total Pages</th>
+      <th>Fastest</th>
+      <th>Slowest</th>
+      <th>Average</th>
+      <th>Median</th>
+      <th>Busts</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @stats.each do |stat| %>
+      <tr>
+        <td><%= stat.date_flown.strftime("%B %d, %Y") %></td>
+        <td><%= stat.point_a.name if stat.point_a %></td>
+        <td><%= stat.point_b.name if stat.point_b %></td>
+        <td><%= stat.total_pages %></td>
+        <td><%= stat.fastest %></td>
+        <td><%= stat.slowest %></td>
+        <td><%= stat.average %></td>
+        <td><%= stat.median %></td>
+        <td><%= stat.busts %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

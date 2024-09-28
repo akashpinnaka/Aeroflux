@@ -1,0 +1,26 @@
+<h2>Add New Stats in Batch for <%= @team.name %></h2>
+
+<%= form_for @team do |f| %>
+  <div id="stats-fields">
+    <%= f.fields_for :point_to_point_stats do |stat_fields| %>
+      <% unless stat_fields.object.persisted? %>
+        <div class="stat-fields">
+          
+            <%= stat_fields.date_field :date_flown %>
+            <%= stat_fields.collection_select :point_a_id, Point.all, :id, :letter, prompt: "From" %>
+            <%= stat_fields.collection_select :point_b_id, Point.all, :id, :letter, prompt: "To" %>
+            <%= stat_fields.number_field :total_pages, placeholder: "Pages" %>
+            <%= stat_fields.text_field :fastest, placeholder: "Fastest" %>
+            <%= stat_fields.text_field :slowest, placeholder: "Slowest" %>
+            <%= stat_fields.text_field :average, placeholder: "Average" %>
+            <%= stat_fields.text_field :median, placeholder: "Median" %>
+            <%= stat_fields.number_field :busts, placeholder: "Busts" %>
+            <button type="button" class="remove-stat-fields">Remove</button>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <button type="button" id="add-stat-fields">Add More Stats</button>
+  <%= f.submit "Add Stats in Batch" %>
+<% end %>

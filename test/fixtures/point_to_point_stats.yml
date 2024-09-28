@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date_flown: 2024-09-17 22:58:01
+  point_a: 1
+  point_b: 1
+  total_pages: 1
+  fastest: 1.5
+  slowest: 1.5
+  average: 1.5
+  median: 1.5
+  busts: 1
+  team_id: 1
+
+two:
+  date_flown: 2024-09-17 22:58:01
+  point_a: 1
+  point_b: 1
+  total_pages: 1
+  fastest: 1.5
+  slowest: 1.5
+  average: 1.5
+  median: 1.5
+  busts: 1
+  team_id: 1
