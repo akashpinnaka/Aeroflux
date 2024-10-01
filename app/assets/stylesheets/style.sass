@@ -1,0 +1,62 @@
+*
+  margin: 0
+  padding: 0
+  outline: 0
+  box-sizing: border-box
+
+a
+  text-decoration: none
+
+.float-left
+  float: left
+
+.float-right
+  float: right
+
+.flexbox
+  display: flex
+
+/* Styles for clear fixing the floating elements */
+.clearfix:before, .clearfix:after
+  content: ""
+  display: table
+
+.clearfix:after
+  clear: both
+
+.skinny-container
+  width: 90%
+  margin: 0 auto
+
+//========================================================
+// STYLES FOR HEADER
+//========================================================
+
+header
+  padding: 20px 0
+
+#header-inner
+  align-items: center
+
+#logo
+  width: 40%
+  // background-color: #099
+  #logo-inner
+    width: 80%
+    // max-width: 400px
+    img
+      width: 100%
+
+#team-members
+  width: 60%
+  // background-color: #990
+  justify-content: flex-end
+  .avatar-wrapper
+    width: 16%
+    padding: 10px
+    margin-left: 5px
+    border: 1px solid #eee
+    border-radius: 50%
+    img
+      width: 100%
+
