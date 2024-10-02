@@ -29,7 +29,7 @@
   </thead>
   <tbody>
     <% @stats.each do |stat| %>
-      <tr>
+      <tr class="<%= cycle('odd', 'even') %>">
         <td><%= stat.date_flown.strftime("%B %d, %Y") %></td>
         <td><%= stat.point_a.letter if stat.point_a %></td>
         <td><%= stat.point_b.letter if stat.point_b %></td>
